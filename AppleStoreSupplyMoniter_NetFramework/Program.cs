@@ -66,7 +66,7 @@ namespace AppleStoreSupplyMoniter
         };
 
         public TimeSpan WholeListQueryInterval { get; set; } = TimeSpan.FromSeconds(60);
-        public TimeSpan PerProductQueryInterval { get; set; } = TimeSpan.FromSeconds(0.5);
+        public TimeSpan PerProductQueryInterval { get; set; } = TimeSpan.FromSeconds(0.6);
         public int RepeatCount { get; set; } = 60;
         public bool RepeatInfinite { get; set; } = false;
         public async Task Monite()
@@ -74,15 +74,10 @@ namespace AppleStoreSupplyMoniter
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
             player.SoundLocation = @"C:\Users\cjw11\Music\宋祖英 - 好日子.wav"; //wav format
 
-            Random rand = new Random();
             int tried = 0;
             StringBuilder sbFound = new StringBuilder();
             while (RepeatInfinite || RepeatCount-- > 0)
             {
-                ParallelOptions op = new ParallelOptions();
-                op.MaxDegreeOfParallelism = 2;
-
-
                 // Can be Parallel, but high frequency will result http 503
                 foreach (var item in Z0YQ_option)
                 {
