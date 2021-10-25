@@ -63,6 +63,9 @@ namespace AppleStoreSupplyMoniter
             "MKMQ3CH/A,MJXD3FE/A",      //银色不锈钢表壳; 彩虹版 7
             "MKMQ3CH/A,MJXE3FE/A",      //银色不锈钢表壳; 彩虹版 8
             "MKMQ3CH/A,MJXF3FE/A",      //银色不锈钢表壳; 彩虹版 9
+            
+            //45 毫米黑色不锈钢表壳
+            "MKL23CH/A",                //石墨色不锈钢表壳；深邃蓝色运动型表带
         };
 
         public TimeSpan WholeListQueryInterval { get; set; } = TimeSpan.FromSeconds(60);
